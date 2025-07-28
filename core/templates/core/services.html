@@ -1,0 +1,54 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}Services | Indra Dental Clinic{% endblock %}
+{% block content %}
+
+<div class="container py-4">
+  <!-- Services Section -->
+  <h2 class="text-center mb-4" data-aos="fade-down">🦷 Our Dental Services</h2>
+  <div class="row align-items-center mb-5">
+    <div class="col-md-6" data-aos="fade-right">
+      <ul class="list-group shadow-sm rounded">
+        <li class="list-group-item">🦷 General Check-up</li>
+        <li class="list-group-item">🪥 Teeth Cleaning</li>
+        <li class="list-group-item">✨ Teeth Whitening</li>
+        <li class="list-group-item">🛠️ Root Canal Treatment</li>
+        <li class="list-group-item">😬 Braces & Alignment</li>
+        <li class="list-group-item">🧪 Cosmetic Dentistry</li>
+        <li class="list-group-item">🦷 Dental Implants</li>
+        <li class="list-group-item">🩹 Emergency Dental Care</li>
+        <li class="list-group-item">🧑‍⚕️ Pediatric Dentistry</li>
+      </ul>
+    </div>
+    <div class="col-md-6" data-aos="zoom-in">
+      <img src="{% static 'core/img/treatment.png' %}" class="img-fluid rounded shadow" alt="Treatment Image">
+    </div>
+  </div>
+
+  <!-- Gallery Section -->
+  <h3 class="text-center mb-4" data-aos="fade-down">📸 Clinic Gallery</h3>
+  <div class="row g-3 justify-content-center" data-aos="fade-up">
+    {% for img in gallery_images %}
+      <div class="col-6 col-md-4 col-lg-3">
+        <a href="{{ img.image.url }}" data-lightbox="clinic-gallery" data-title="{{ img.title }}">
+          <img src="{{ img.image.url }}" class="img-fluid rounded border shadow-sm" alt="{{ img.title }}">
+        </a>
+      </div>
+    {% empty %}
+      <p class="text-muted text-center">No images uploaded yet.</p>
+    {% endfor %}
+
+    <!-- Static fallback images -->
+    <div class="col-6 col-md-4 col-lg-3">
+      <a href="{% static 'core/img/clinic1.png' %}" data-lightbox="clinic-gallery" data-title="Clinic View">
+        <img src="{% static 'core/img/clinic1.png' %}" class="img-fluid rounded border shadow-sm" alt="Clinic Fallback">
+      </a>
+    </div>
+  </div>
+</div>
+
+<!-- Lightbox -->
+<link href="{% static 'core/lightbox2/css/lightbox.min.css' %}" rel="stylesheet">
+<script src="{% static 'core/lightbox2/js/lightbox.min.js' %}"></script>
+
+{% endblock %}

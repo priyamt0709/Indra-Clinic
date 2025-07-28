@@ -1,0 +1,50 @@
+{% extends 'core/base.html' %}
+{% load static %}
+{% block title %}About | Indra Dental Clinic{% endblock %}
+{% block content %}
+
+<div class="container py-4">
+  <!-- About Section -->
+  <div class="row align-items-center mb-5">
+    <!-- Text Column -->
+    <div class="col-md-6" data-aos="fade-right">
+      <h2>About Indra Dental Clinic</h2>
+      <p>We are a trusted and modern dental clinic in Prayagraj, offering high-quality dental services with care, precision, and professionalism.</p>
+      <p>Our team of experienced dentists is dedicated to providing personalized care to each patient, ensuring comfort and satisfaction with every visit.</p>
+      <p>At Indra Dental Clinic, we use the latest technology and techniques for effective dental treatments. Our clinic is equipped with state-of-the-art facilities to ensure the best possible outcomes for our patients.</p>
+      <p>We offer a wide range of dental services, including preventive care, cosmetic dentistry, restorative treatments, orthodontics, and emergency dental care.</p>
+      <p>Whether it’s a routine check-up or a complex procedure, our friendly and professional staff is here to assist you every step of the way.</p>
+      <p><strong>Visit us today and experience the difference — your smile is our priority!</strong></p>
+    </div>
+
+    <!-- Image Column -->
+    <div class="col-md-6 text-center" data-aos="zoom-in">
+      <img src="{% static 'core/img/clinic2.png' %}" alt="Clinic Image" class="img-fluid rounded shadow">
+    </div>
+  </div>
+
+  <!-- Why Choose Us Section -->
+  <div class="row" data-aos="fade-up">
+    <div class="col">
+      <h3 class="mb-3">💡 Why Choose Us?</h3>
+      <p>We prioritize your dental health and well-being. Here’s why patients trust us:</p>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">✅ Experienced & Certified Dentists</li>
+        <li class="list-group-item">✅ Advanced Equipment & Technology</li>
+        <li class="list-group-item">✅ Patient-Centered Care</li>
+        <li class="list-group-item">✅ Affordable & Transparent Pricing</li>
+        <li class="list-group-item">✅ Comprehensive Dental Services</li>
+        <li class="list-group-item">✅ Convenient Location & Flexible Hours</li>
+        <li class="list-group-item">✅ Friendly & Supportive Staff</li>
+        <li class="list-group-item">✅ Clean & Comfortable Environment</li>
+        <li class="list-group-item">✅ Emergency Dental Services Available</li>
+        <li class="list-group-item">✅ Positive Patient Reviews & Testimonials</li>
+        <li class="list-group-item">✅ Commitment to Continuous Improvement</li>
+        <li class="list-group-item">✅ Community Involvement & Support</li>
+        <li class="list-group-item">✅ Focus on Preventive Care & Education</li>
+      </ul>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

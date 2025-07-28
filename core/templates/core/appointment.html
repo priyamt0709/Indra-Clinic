@@ -1,0 +1,55 @@
+{% extends 'core/base.html' %}
+{% load widget_tweaks %}
+{% load static %}
+{% block title %}Book Appointment | Indra Dental Clinic{% endblock %}
+{% block content %}
+
+<div class="container py-4">
+  <h2 class="text-center mb-4" data-aos="fade-down">🗓️ Book an Appointment</h2>
+  <p class="text-center mb-5" data-aos="fade-up">
+    Choose your preferred service and date. We’ll confirm your booking shortly.
+  </p>
+
+  <div class="row justify-content-center">
+    <div class="col-md-8" data-aos="fade-up">
+
+      {% if messages %}
+        {% for message in messages %}
+          <div class="alert alert-success">{{ message }}</div>
+        {% endfor %}
+      {% endif %}
+
+      <div class="card shadow-sm border-0">
+        <div class="card-body">
+          <form method="post" class="row g-3">
+            {% csrf_token %}
+            <div class="col-md-6">
+              <label for="id_name" class="form-label">👤 Full Name</label>
+              {{ form.name|add_class:"form-control" }}
+            </div>
+            <div class="col-md-6">
+              <label for="id_phone" class="form-label">📞 Phone</label>
+              {{ form.phone|add_class:"form-control" }}
+            </div>
+            <div class="col-md-6">
+              <label for="id_service" class="form-label">🦷 Service</label>
+              {{ form.service|add_class:"form-control" }}
+            </div>
+            <div class="col-md-6">
+              <label for="id_date" class="form-label">📅 Preferred Date</label>
+              {{ form.date|add_class:"form-control" }}
+            </div>
+            <div class="col-12 text-center">
+              <button type="submit" class="btn btn-success w-50">
+                <i class="bi bi-calendar-check-fill me-1"></i> Book Now
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}

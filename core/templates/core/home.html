@@ -1,0 +1,83 @@
+{% extends 'core/base.html' %}
+{% load static %}   
+{% block title %}Home | Indra Dental Clinic{% endblock %}
+{% block content %}
+
+<!-- Hero Section -->
+<div class="p-5 mb-5 bg-white rounded-3 shadow-sm" data-aos="fade-up">
+  <div class="container-fluid py-5 text-center">
+    <h1 class="display-4 fw-bold text-primary">Indra Dental Clinic</h1>
+    <p class="col-md-8 mx-auto fs-5">Smile with confidence. We provide gentle and affordable dental care in Prayagraj.</p>
+    <a href="{% url 'appointment' %}" class="btn btn-success btn-lg mt-3">
+      <i class="bi bi-calendar-check-fill me-1"></i> Book Appointment
+    </a>
+  </div>
+</div>
+
+<!-- Services Preview -->
+<h2 class="text-center my-4" data-aos="fade-down">🦷 Our Core Services</h2>
+<div class="row text-center g-4 mb-5">
+  {% for service in services %}
+  <div class="col-md-4" data-aos="fade-up" data-aos-delay="{{ forloop.counter0|add:'1' }}00">
+    <div class="card h-100 shadow-sm border-0 hover-shadow">
+      <div class="card-body">
+        <h5 class="card-title fs-4">{{ service.icon }} {{ service.name }}</h5>
+        <p class="card-text text-muted">{{ service.description }}</p>
+      </div>
+    </div>
+  </div>
+  {% empty %}
+  <!-- Static fallback services -->
+  <div class="col-md-4" data-aos="fade-up">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-body">
+        <h5 class="card-title">🪥 Teeth Cleaning</h5>
+        <p class="card-text text-muted">Professional cleaning for a healthy, bright smile.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-body">
+        <h5 class="card-title">🛠️ Root Canal</h5>
+        <p class="card-text text-muted">Pain-free RCT procedures with modern equipment.</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4" data-aos="fade-up" data-aos-delay="400">
+    <div class="card h-100 shadow-sm border-0">
+      <div class="card-body">
+        <h5 class="card-title">✨ Cosmetic Dentistry</h5>
+        <p class="card-text text-muted">Whitening, reshaping, and restoring your smile.</p>
+      </div>
+    </div>
+  </div>
+  {% endfor %}
+</div>
+
+<!-- About Preview -->
+<div class="row my-5 align-items-center">
+  <div class="col-md-6" data-aos="zoom-in">
+    <img src="{% static 'core/img/clinic1.png' %}" class="img-fluid rounded shadow" alt="Clinic Image">
+  </div>
+  <div class="col-md-6" data-aos="fade-left">
+    <h3>Why Choose Indra Dental Clinic?</h3>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">✅ 7+ Years Experience</li>
+      <li class="list-group-item">✅ Affordable Treatment Plans</li>
+      <li class="list-group-item">✅ Clean & Hygienic Environment</li>
+      <li class="list-group-item">✅ Easy Appointment System</li>
+    </ul>
+  </div>
+</div>
+
+<!-- Call to Action -->
+<div class="text-center my-5" data-aos="fade-up">
+  <h4 class="mb-2">Have a question or need urgent help?</h4>
+  <p>
+    Call us at <strong>+91 7225872648</strong> or 
+    <a href="{% url 'contact' %}" class="text-decoration-none">Contact Us</a> online
+  </p>
+</div>
+
+{% endblock %}

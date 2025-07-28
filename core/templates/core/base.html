@@ -1,0 +1,97 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Indra Dental Clinic{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'core/css/styles.css' %}">
+    <!-- Bootstrap Icons CDN -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <!-- AOS CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+
+</head>
+<body class="bg-light">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-primary shadow-sm">
+  <div class="container">
+    <a class="navbar-brand fw-bold" href="{% url 'home' %}">
+      <i class="bi bi-hospital-fill me-1"></i> Indra Dental Clinic
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarContent">
+      <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'home' %}">
+            <i class="bi bi-house-fill me-1"></i> Home
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'about' %}">
+            <i class="bi bi-person-badge-fill me-1"></i> About
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'services' %}">
+            <i class="bi bi-tools me-1"></i> Services
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'appointment' %}">
+            <i class="bi bi-calendar-check-fill me-1"></i> Appointment
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'contact' %}">
+            <i class="bi bi-envelope-fill me-1"></i> Contact
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Main Content -->
+<main class="container py-4">
+    {% block content %}{% endblock %}
+</main>
+
+<!-- Footer -->
+<!-- Footer -->
+<footer class="bg-primary text-white text-center py-4 mt-auto">
+  <div class="container">
+    <p class="mb-1 fw-semibold">© 2025 Indra Dental Clinic — All Rights Reserved</p>
+    <p class="mb-0">
+      📍 Prayagraj, Uttar Pradesh &nbsp; | &nbsp;
+      📞 <a href="tel:+917225872648" class="text-white text-decoration-underline">+91 7225872648</a> &nbsp; | &nbsp;
+      📧 <a href="mailto:gagankumarmishra@gmail.com" class="text-white text-decoration-underline">Email Us</a>
+    </p>
+  </div>
+</footer>
+
+
+<!-- Bootstrap JS -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+
+<!-- AOS JS -->
+<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<script>
+  AOS.init({
+    once: true,     // animations happen once per scroll
+    duration: 800,  // animation duration in ms
+    offset: 100     // trigger offset from the top
+  });
+</script>
+
+</body>
+</html>
