@@ -27,12 +27,7 @@ SECRET_KEY = config('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG', default=False, cast=bool)
 
-ALLOWED_HOSTS = 
-[
-    'Indra-Clinic.onrender.com',
-    'localhost', '127.0.0.1'
-    os.getenv('RENDER_EXTERNAL_HOSTNAME'),
-    ]
+ALLOWED_HOSTS = ['Indra-Clinic.onrender.com','localhost', '127.0.0.1', os.getenv('RENDER_EXTERNAL_HOSTNAME')]
 
 
 # Application definition
